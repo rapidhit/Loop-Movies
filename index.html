@@ -1,102 +1,184 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>My Free Private Videos🍑🍑</title>
-<style>
-body {
-display: flex;
-flex-direction: column; /* Arrange children in a column */
-align-items: center; /* Center elements horizontally */
-justify-content: center; /* Center elements vertically */
-height: 100vh;
-margin: 0;
-background-color: #121212; /* Dark background color */
-color: white; /* White text color for contrast */
-font-family: Arial, sans-serif;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Shadows - Official Link Tree</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@500&display=swap');
 
-video {
-width: 90%; /* Responsive width for mobile */
-max-width: 300px; /* Maximum width */
-height: auto; /* Maintain aspect ratio */
-border-radius: 8px; /* Rounded corners */
-border: 5px solid white; /* White border around the video */
-margin-bottom: 20px; /* Add space below the video */
-display: block; /* Ensure video is treated as a block element */
-}
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+            color: #e0e0e0;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
 
-.button {
-display: block; /* Ensure buttons are block elements */
-width: 90%; /* Responsive width for mobile */
-max-width: 250px; /* Maximum width */
-padding: 12px 20px; /* Adjust padding for better appearance */
-margin: 10px 0; /* Space between buttons */
-border: none;
-border-radius: 5px;
-color: white;
-text-align: center;
-text-decoration: none;
-font-size: 18px;
-cursor: pointer;
-}
+        /* Cinematic film grain overlay */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAASUlEQVQYV2NkYGD4z8DAwMgABXAGXgQGGK8zMDIyMvJXUBBLlpX9Z2BkYGBg+Pj4j0EZQJqBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYHxyoYAAAAAElFTkSuQmCC') repeat;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 1;
+        }
 
-.green {
-background-color: green;
-animation: pulse 1s infinite; /* Pulsing effect for green button */
-}
+        .container {
+            text-align: center;
+            z-index: 2;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+        }
 
-.yellow {
-background-color: yellow;
-color: black; /* Change text color to black for better contrast */
-animation: pulse 1.5s infinite; /* Pulsing effect for yellow button */
-animation-delay: 1.5s; /* Start yellow pulsing after 1.5 seconds */
-}
+        .movie-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #ff1a1a;
+            text-shadow: 
+                0 0 10px #ff0000,
+                0 0 20px #ff0000,
+                0 0 30px #ff0000;
+            letter-spacing: 3px;
+            animation: flicker 3s infinite alternate;
+        }
 
-.red {
-background-color: red;
-/* No animation applied here, so no pulsing effect */
-}
+        .tagline {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            margin-bottom: 40px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
 
-@keyframes pulse {
-0% {
-transform: scale(1);
-}
-50% {
-transform: scale(1.05);
-}
-100% {
-transform: scale(1);
-}
-}
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
 
-@media (max-width: 600px) {
-body {
-padding: 10px; /* Add padding on smaller screens */
-}
+        .link-btn {
+            display: block;
+            padding: 16px 24px;
+            background: rgba(255, 10, 10, 0.15);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid #ff1a1a;
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 0 15px rgba(255, 26, 26, 0.3);
+        }
 
-.button {
-font-size: 16px; /* Adjust font size for smaller screens */
-padding: 10px; /* Adjust padding for smaller buttons */
-}
+        .link-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.6s;
+        }
 
-video {
-max-width: 100%; /* Allow video to take full width on small screens */
-}
-}
-</style>
+        .link-btn:hover {
+            background: rgba(255, 10, 10, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(255, 26, 26, 0.6);
+            border-color: #ff4d4d;
+        }
+
+        .link-btn:hover::before {
+            left: 100%;
+        }
+
+        .link-btn:active {
+            transform: translateY(1px);
+        }
+
+        .clapper {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: clapper 4s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+            75% { opacity: 0.95; }
+        }
+
+        @keyframes clapper {
+            0%, 100% { transform: rotate(0deg); }
+            10% { transform: rotate(-10deg); }
+            20% { transform: rotate(10deg); }
+            30% { transform: rotate(-5deg); }
+            40% { transform: rotate(0deg); }
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.7rem;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        .reel {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 6px solid #333;
+            border-top: 6px solid #ff1a1a;
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: spin 8s linear infinite;
+        }
+
+        .reel.left { top: 10%; left: 10%; }
+        .reel.right { bottom: 10%; right: 10%; }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-<video controls autoplay loop muted>
-<source src="your-video-url.mp4" type="video/mp4" />
-Your browser does not support the video tag.
-</video>
+    <div class="reel left"></div>
+    <div class="reel right"></div>
 
-<a href="https://ln.run/H_LVB" class="button green">I AND MY FRIENDS</a>
-<a href="https://ln.run/H_LVB" class="button yellow">BATHING VIDEOS</a>
-<a href="https://ln.run/H_LVB" class="button red">ALL VIDEOS</a>
+    <div class="container">
+        <div class="clapper">🎬</div>
+        <h1 class="movie-title">ETERNAL SHADOWS</h1>
+        <p class="tagline">Some secrets should stay buried in the dark.</p>
+
+        <div class="links">
+            <a href="https://www.google.com/search?q=Eternal+Shadows+official+trailer" class="link-btn" target="_blank">
+                Watch Trailer
+            </a>
+            <a href="https://www.google.com/search?q=Eternal+Shadows+tickets" class="link-btn" target="_blank">
+                Get Tickets
+            </a>
+            <a href="https://www.google.com/search?q=Eternal+Shadows+official+website" class="link-btn" target="_blank">
+                Official Site
+            </a>
+        </div>
+
+        <footer>© 2025 DarkReel Productions</footer>
+    </div>
 </body>
 </html>
-
