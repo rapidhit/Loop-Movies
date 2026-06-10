@@ -3,182 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loop Movies</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Orbitron:wght@500&display=swap');
-
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
-            color: #e0e0e0;
-            font-family: 'Orbitron', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* Cinematic film grain overlay */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAASUlEQVQYV2NkYGD4z8DAwMgABXAGXgQGGK8zMDIyMvJXUBBLlpX9Z2BkYGBg+Pj4j0EZQJqBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYHxyoYAAAAAElFTkSuQmCC') repeat;
-            opacity: 0.08;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .container {
-            text-align: center;
-            z-index: 2;
-            padding: 30px;
-            max-width: 400px;
-            width: 90%;
-        }
-
-        .movie-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            color: #ff1a1a;
-            text-shadow: 
-                0 0 10px #ff0000,
-                0 0 20px #ff0000,
-                0 0 30px #ff0000;
-            letter-spacing: 3px;
-            animation: flicker 3s infinite alternate;
-        }
-
-        .tagline {
-            font-size: 0.9rem;
-            color: #aaaaaa;
-            margin-bottom: 40px;
-            font-style: italic;
-            letter-spacing: 1px;
-        }
-
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .link-btn {
-            display: block;
-            padding: 16px 24px;
-            background: rgba(255, 10, 10, 0.15);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border: 2px solid #ff1a1a;
-            border-radius: 8px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            box-shadow: 0 0 15px rgba(255, 26, 26, 0.3);
-        }
-
-        .link-btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.6s;
-        }
-
-        .link-btn:hover {
-            background: rgba(255, 10, 10, 0.3);
-            transform: translateY(-3px);
-            box-shadow: 0 0 25px rgba(255, 26, 26, 0.6);
-            border-color: #ff4d4d;
-        }
-
-        .link-btn:hover::before {
-            left: 100%;
-        }
-
-        .link-btn:active {
-            transform: translateY(1px);
-        }
-
-        .clapper {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            animation: clapper 4s infinite;
-        }
-
-        @keyframes flicker {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.85; }
-            75% { opacity: 0.95; }
-        }
-
-        @keyframes clapper {
-            0%, 100% { transform: rotate(0deg); }
-            10% { transform: rotate(-10deg); }
-            20% { transform: rotate(10deg); }
-            30% { transform: rotate(-5deg); }
-            40% { transform: rotate(0deg); }
-        }
-
-        footer {
-            margin-top: 50px;
-            font-size: 0.7rem;
-            color: #666;
-            letter-spacing: 1px;
-        }
-
-        .reel {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            border: 6px solid #333;
-            border-top: 6px solid #ff1a1a;
-            border-radius: 50%;
-            opacity: 0.2;
-            animation: spin 8s linear infinite;
-        }
-
-        .reel.left { top: 10%; left: 10%; }
-        .reel.right { bottom: 10%; right: 10%; }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+    <title>Push Notification App</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="theme-color" content="#0066cc">
 </head>
 <body>
-    <div class="reel left"></div>
-    <div class="reel right"></div>
-
     <div class="container">
-        <div class="clapper">🎬</div>
-        <h1 class="movie-title">ETERNAL SHADOWS</h1>
-        <p class="tagline">Some secrets should stay buried in the dark.</p>
+        <header>
+            <h1>📬 Push Notifications</h1>
+            <p>Stay updated with instant notifications</p>
+        </header>
 
-        <div class="links">
-            <a href="https://ln.run/1cNjn" class="link-btn" target="_blank">
-                Crazy Wife
-            </a>
-            <a href="https://ln.run/1cNjn" class="link-btn" target="_blank">
-                Hidden Sacrifice
-            </a>
-            <a href="https://ln.run/1cNjn" class="link-btn" target="_blank">
-                All Movies
-            </a>
-        </div>
+        <main>
+            <!-- Status Section -->
+            <section class="card status-card">
+                <h2>App Status</h2>
+                <div class="status-grid">
+                    <div class="status-item">
+                        <span class="status-label">Service Worker:</span>
+                        <span id="swStatus" class="status-value badge badge-inactive">Not Supported</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Notifications:</span>
+                        <span id="notifStatus" class="status-value badge badge-inactive">Not Supported</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Push API:</span>
+                        <span id="pushStatus" class="status-value badge badge-inactive">Not Supported</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Permission:</span>
+                        <span id="permStatus" class="status-value badge badge-default">Not Requested</span>
+                    </div>
+                </div>
+            </section>
 
-        <footer>© Loop Movies</footer>
+            <!-- Subscription Section -->
+            <section class="card subscription-card">
+                <h2>Subscription Management</h2>
+                <div class="button-group">
+                    <button id="subscribeBtn" class="btn btn-primary" onclick="subscribeToNotifications()">Enable Notifications</button>
+                    <button id="unsubscribeBtn" class="btn btn-danger" onclick="unsubscribeFromNotifications()" style="display: none;">Disable Notifications</button>
+                </div>
+                <div id="subscriptionInfo" class="subscription-info hidden">
+                    <h3>Subscription Details</h3>
+                    <pre id="subscriptionDetails"></pre>
+                    <button class="btn btn-secondary" onclick="copySubscriptionEndpoint()">Copy Endpoint</button>
+                </div>
+            </section>
+
+            <!-- Test Notifications Section -->
+            <section class="card notifications-card">
+                <h2>Send Test Notification</h2>
+                <div class="form-group">
+                    <label for="notifTitle">Title:</label>
+                    <input type="text" id="notifTitle" placeholder="Notification Title" value="Hello from Push App!">
+                </div>
+                <div class="form-group">
+                    <label for="notifBody">Message:</label>
+                    <textarea id="notifBody" placeholder="Notification Message" rows="3">This is a test push notification. You're receiving this because notifications are enabled!</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="notifIcon">Icon URL:</label>
+                    <input type="text" id="notifIcon" placeholder="Icon URL" value="icon-192.png">
+                </div>
+                <div class="form-group">
+                    <label for="notifBadge">Badge URL:</label>
+                    <input type="text" id="notifBadge" placeholder="Badge URL" value="badge-72.png">
+                </div>
+                <button class="btn btn-success" onclick="sendTestNotification()">Send Test Notification</button>
+            </section>
+
+            <!-- Notification History Section -->
+            <section class="card history-card">
+                <h2>Notification History</h2>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="clearHistory()">Clear History</button>
+                </div>
+                <ul id="historyList" class="history-list">
+                    <li class="empty-state">No notifications yet</li>
+                </ul>
+            </section>
+
+            <!-- App Controls Section -->
+            <section class="card controls-card">
+                <h2>App Controls</h2>
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="installApp()">Install App</button>
+                    <button class="btn btn-secondary" onclick="updateServiceWorker()">Update Service Worker</button>
+                    <button class="btn btn-secondary" onclick="clearCache()">Clear Cache</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Push Notification App | Built with ❤️</p>
+        </footer>
     </div>
+
+    <div id="installPrompt" class="install-prompt hidden">
+        <div class="install-prompt-content">
+            <h3>Install App</h3>
+            <p>Add this app to your home screen for quick access!</p>
+            <button id="installPromptBtn" class="btn btn-primary">Install</button>
+            <button class="btn btn-secondary" onclick="dismissInstallPrompt()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="sw-register.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
